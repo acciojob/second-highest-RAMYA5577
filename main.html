@@ -10,15 +10,18 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			if(arr.length ==0 || arr.length==1)
-				return "-Infinity";
-			
-			
-			arr.sort();
-	 if(arr[0]==arr[arr.length-1])
-		 return "-Infinity";
-	return arr[arr.length-2];
-			
+			let big=arr[0];
+			let sbig=-infinity;
+			for(let k of arr){
+				if(k>big){
+					big=sbig;
+					sbig=big;
+				}
+				else if(k>sbig && k!=big){
+					sbig=k;
+				}
+			}
+			return sbig;
 		}
 
 		function Main() {
