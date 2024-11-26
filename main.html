@@ -11,11 +11,11 @@
 		function secondHighest(arr) {
 			//Write your code here
 			let big=arr[0];
-			let sbig="-infinity";
+			let sbig=arr[1];
 			for(let k of arr){
 				if(k>big){
-					big=sbig;
 					sbig=big;
+					big=k;
 				}
 				else if(k>sbig && k!=big){
 					sbig=k;
